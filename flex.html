@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <style type="text/css">
+    	.flexbox {
+    		display: flex;
+    		flex-direction: row;
+    		border: 1px solid #000000;
+    	}
+
+    	.flexbox > div {
+    		flex: 1 1 auto; /*flex-grow flex-shrink flex-basis */
+    		margin: 0px;
+    		padding: 0px;
+    		order : 1;
+    	}
+
+    	.flexbox > div:nth-child(1) { background-color: #85C1E9;    }
+    	.flexbox > div:nth-child(2) { background-color: #D98880;  flex-grow:2	; }
+
+    	@media screen and (max-width: 640px) {
+    		.flexbox  {
+    			flex-direction: column;
+    		}
+    		.flexbox > div:nth-child(2) { 
+    			order : 0;
+    		}
+    	}
+    </style>
+</head>
+
+<body>
+    <div class="flexbox">
+        <div>one</div>
+        <div>two</div>
+        <div>three</div>
+    </div>
+</body>
+</html>
